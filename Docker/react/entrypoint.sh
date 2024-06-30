@@ -4,7 +4,7 @@
 if [ ! -f /app/package.json ]; then
   # Ensure the directory is clean before creating a new app
   rm -rf /app/*
-  npx create-react-app my-app --template typescript /app
+  npx create-next-app@latest /app
 fi
 
 cd /app
