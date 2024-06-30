@@ -8,6 +8,11 @@ if [ ! -f /app/package.json ]; then
   # Initialize Adonis app with API kit and auth-guard access_tokens
   npm init adonisjs@latest /app -- --kit=api --auth-guard=access_tokens --db=mysql
   cd /app
+
+  # Replace specific values in .env file
+  sed -i "s/^HOST=.*/HOST=0.0.0.0/" .env
+  sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=${DB_PASSWORD}/" .env
+  sed -i "s/^DB_DATABASE=.*/DB_DATABASE=${DB_DATABASE}/" .env
 else
   # If the app is already initialized, just start the server
   cd /app

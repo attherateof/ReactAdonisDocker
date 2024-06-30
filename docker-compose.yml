@@ -28,11 +28,8 @@ services:
       - ./build/adonis:/app
     environment:
       - NODE_ENV=development
-      - DB_CONNECTION=mysql
-      - MYSQL_HOST=db
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=secret
-      - MYSQL_DB=adonis
+      - DB_PASSWORD=secret
+      - DB_DATABASE=adonis
     depends_on:
       - db
     networks:
